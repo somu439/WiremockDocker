@@ -3,10 +3,10 @@
 # Define variables
 WIREMOCK_IMAGE="wiremock/wiremock"
 CONTAINER_NAME="wiremock"
-MAPPINGS_DIR="/Users/Sreeni/Documents/Wiremock"
+LOCAL_WIREMOCK="/Users/Sreeni/Documents/Wiremock"
 
 # Start WireMock container
-docker run -it -d --name $CONTAINER_NAME -p 8080:8080 -v $MAPPINGS_DIR:/home/wiremock $WIREMOCK_IMAGE:3.3.1
+docker run -it -d --name $CONTAINER_NAME -p 8080:8080 -v $LOCAL_WIREMOCK:/home/wiremock $WIREMOCK_IMAGE:3.3.1
 
 # Copy mappings to container (if needed)
 # docker cp /local/path/to/mappings $CONTAINER_NAME:/home/wiremock/mappings
