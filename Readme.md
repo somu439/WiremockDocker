@@ -9,3 +9,8 @@ json body
 
 4. Start WireMock container
 **docker run -it -d --name $CONTAINER_NAME -p 8080:8080 -v $LOCAL_WIREMOCK:/home/wiremock $WIREMOCK_IMAGE:3.3.1**
+
+5. Delayed response (globally): post, **http://localhost:8080/__admin/settings**
+   **{
+    "fixedDelay": 2500
+    }**
