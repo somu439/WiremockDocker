@@ -1,0 +1,28 @@
+// response based on jsonpath request body or urlpath pattern
+{
+  "id" : "317c7c68-670f-42f6-8286-f72b70e0a765", //optional
+  "name" : "v31_name_india",
+  "request" : {
+    "urlPathPattern" : "/v3.1/name/.*",
+    "method" : "GET",
+        "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.firstname"
+      }
+    ]
+  },
+  "response" : {
+    "status" : 200,
+	 "bodyFileName": "{{jsonPath request.body '$.firstname'}}.json",  // To get from urlpath pattern from 3rd array: "{{request.pathSegments.[2]}}.json",
+	         "transformers": ["response-template"],
+        "transformerParameters":  {
+            "MyCustomParameter": "Parameter Value"
+        },
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "317c7c68-670f-42f6-8286-f72b70e0a765", //optional
+  "persistent" : true,
+  "insertionIndex" : 2 //optional
+}

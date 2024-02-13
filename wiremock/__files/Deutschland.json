@@ -1,0 +1,220 @@
+[
+    {
+        "capital": [
+            "Berlin"
+        ],
+        "flag": "🇩🇪",
+        "independent": true,
+        "landlocked": false,
+        "borders": [
+            "AUT",
+            "BEL",
+            "CZE",
+            "DNK",
+            "FRA",
+            "LUX",
+            "NLD",
+            "POL",
+            "CHE"
+        ],
+        "postalCode": {
+            "regex": "^(\\d{5})$",
+            "format": "#####"
+        },
+        "flags": {
+            "svg": "https:\/\/flagcdn.com\/de.svg",
+            "png": "https:\/\/flagcdn.com\/w320\/de.png",
+            "alt": "The flag of Germany is composed of three equal horizontal bands of black, red and gold."
+        },
+        "capitalInfo": {
+            "latlng": [
+                52.52,
+                13.4
+            ]
+        },
+        "ccn3": "276",
+        "coatOfArms": {
+            "svg": "https:\/\/mainfacts.com\/media\/images\/coats_of_arms\/de.svg",
+            "png": "https:\/\/mainfacts.com\/media\/images\/coats_of_arms\/de.png"
+        },
+        "demonyms": {
+            "fra": {
+                "f": "Allemande",
+                "m": "Allemand"
+            },
+            "eng": {
+                "f": "German",
+                "m": "German"
+            }
+        },
+        "fifa": "GER",
+        "cioc": "GER",
+        "car": {
+            "side": "right",
+            "signs": [
+                "DY"
+            ]
+        },
+        "translations": {
+            "hun": {
+                "common": "Németország",
+                "official": "Német Szövetségi Köztársaság"
+            },
+            "swe": {
+                "common": "Tyskland",
+                "official": "Förbundsrepubliken Tyskland"
+            },
+            "zho": {
+                "common": "德国",
+                "official": "德意志联邦共和国"
+            },
+            "est": {
+                "common": "Saksamaa",
+                "official": "Saksamaa Liitvabariik"
+            },
+            "fin": {
+                "common": "Saksa",
+                "official": "Saksan liittotasavalta"
+            },
+            "pol": {
+                "common": "Niemcy",
+                "official": "Republika Federalna Niemiec"
+            },
+            "kor": {
+                "common": "독일",
+                "official": "독일 연방 공화국"
+            },
+            "ces": {
+                "common": "Německo",
+                "official": "Spolková republika Německo"
+            },
+            "tur": {
+                "common": "Almanya",
+                "official": "Almanya Federal Cumhuriyeti"
+            },
+            "ara": {
+                "common": "ألمانيا",
+                "official": "جمهورية ألمانيا الاتحادية"
+            },
+            "rus": {
+                "common": "Германия",
+                "official": "Федеративная Республика Германия"
+            },
+            "por": {
+                "common": "Alemanha",
+                "official": "República Federal da Alemanha"
+            },
+            "bre": {
+                "common": "Alamagn",
+                "official": "Republik Kevreadel Alamagn"
+            },
+            "fra": {
+                "common": "Allemagne",
+                "official": "République fédérale d'Allemagne"
+            },
+            "deu": {
+                "common": "Deutschland",
+                "official": "Bundesrepublik Deutschland"
+            },
+            "ita": {
+                "common": "Germania",
+                "official": "Repubblica federale di Germania"
+            },
+            "per": {
+                "common": "آلمان",
+                "official": "جمهوری فدرال آلمان"
+            },
+            "spa": {
+                "common": "Alemania",
+                "official": "República Federal de Alemania"
+            },
+            "urd": {
+                "common": "جرمنی",
+                "official": "وفاقی جمہوریہ جرمنی"
+            },
+            "nld": {
+                "common": "Duitsland",
+                "official": "Bondsrepubliek Duitsland"
+            },
+            "jpn": {
+                "common": "ドイツ",
+                "official": "ドイツ連邦共和国"
+            },
+            "hrv": {
+                "common": "Njemačka",
+                "official": "Njemačka Federativna Republika"
+            },
+            "srp": {
+                "common": "Немачка",
+                "official": "Савезна Република Немачка"
+            },
+            "slk": {
+                "common": "Nemecko",
+                "official": "Nemecká spolková republika"
+            },
+            "cym": {
+                "common": "Germany",
+                "official": "Federal Republic of Germany"
+            }
+        },
+        "altSpellings": [
+            "DE",
+            "Federal Republic of Germany",
+            "Bundesrepublik Deutschland"
+        ],
+        "area": 357114.0,
+        "languages": {
+            "deu": "German"
+        },
+        "maps": {
+            "openStreetMaps": "https:\/\/www.openstreetmap.org\/relation\/51477",
+            "googleMaps": "https:\/\/goo.gl\/maps\/mD9FBMq1nvXUBrkv6"
+        },
+        "subregion": "Western Europe",
+        "idd": {
+            "suffixes": [
+                "9"
+            ],
+            "root": "+4"
+        },
+        "tld": [
+            ".de"
+        ],
+        "unMember": true,
+        "gini": {
+            "2016": 31.9
+        },
+        "continents": [
+            "Europe"
+        ],
+        "population": 83240525,
+        "startOfWeek": "monday",
+        "timezones": [
+            "UTC+01:00"
+        ],
+        "name": {
+            "nativeName": {
+                "deu": {
+                    "common": "Deutschland",
+                    "official": "Bundesrepublik Deutschland"
+                }
+            },
+            "common": "Germany",
+            "official": "Federal Republic of Germany"
+        },
+        "cca3": "DEU",
+        "region": "Europe",
+        "latlng": [
+            51.0,
+            9.0
+        ],
+        "cca2": "DE",
+        "status": "officially-assigned",
+        "currencies": {
+            "EUR": {
+                "symbol": "\u20AC",
+                "name": "Euro"
+            }
+        }
+    }
+]

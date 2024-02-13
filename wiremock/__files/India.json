@@ -1,0 +1,418 @@
+[
+    {
+        "capital": [
+            "Sreeni"
+        ],
+        "flag": "🇮🇴",
+        "independent": false,
+        "landlocked": false,
+        "flags": {
+            "svg": "https:\/\/flagcdn.com\/io.svg",
+            "png": "https:\/\/flagcdn.com\/w320\/io.png"
+        },
+        "capitalInfo": {
+            "latlng": [
+                -7.3,
+                72.4
+            ]
+        },
+        "ccn3": "086",
+        "coatOfArms": {
+        },
+        "demonyms": {
+            "eng": {
+                "f": "Indian",
+                "m": "Indian"
+            }
+        },
+        "car": {
+            "side": "right",
+            "signs": [
+                "GB"
+            ]
+        },
+        "translations": {
+            "hun": {
+                "common": "Brit Indiai-óceáni Terület",
+                "official": "Brit Indiai-óceáni Terület"
+            },
+            "swe": {
+                "common": "Brittiska territoriet i Indiska Oceanen",
+                "official": "Brittiska territoriet i Indiska Oceanen"
+            },
+            "zho": {
+                "common": "英属印度洋领地",
+                "official": "英属印度洋领地"
+            },
+            "est": {
+                "common": "Briti India ookeani ala",
+                "official": "Briti India ookeani ala"
+            },
+            "fin": {
+                "common": "Brittiläinen Intian valtameren alue",
+                "official": "Brittiläinen Intian valtameren alue"
+            },
+            "pol": {
+                "common": "Brytyjskie Terytorium Oceanu Indyjskiego",
+                "official": "Brytyjskie Terytorium Oceanu Indyjskiego"
+            },
+            "kor": {
+                "common": "인도",
+                "official": "인도 공화국"
+            },
+            "ces": {
+                "common": "Britské indickooceánské území",
+                "official": "Britské indickooceánské území"
+            },
+            "tur": {
+                "common": "Britanya Hint Okyanusu Toprakları",
+                "official": "Britanya Hint Okyanusu Toprakları"
+            },
+            "ara": {
+                "common": "إقليم المحيط الهندي البريطاني",
+                "official": "إقليم المحيط الهندي البريطاني"
+            },
+            "rus": {
+                "common": "Британская территория в Индийском океане",
+                "official": "Британская территория Индийского океана"
+            },
+            "por": {
+                "common": "Território Britânico do Oceano Índico",
+                "official": "British Indian Ocean Territory"
+            },
+            "bre": {
+                "common": "Tiriad breizhveurat Meurvor Indez",
+                "official": "Tiriad breizhveurat Meurvor Indez"
+            },
+            "fra": {
+                "common": "Territoire britannique de l'océan Indien",
+                "official": "Territoire britannique de l' océan Indien"
+            },
+            "deu": {
+                "common": "Britisches Territorium im Indischen Ozean",
+                "official": "Britisches Territorium im Indischen Ozean"
+            },
+            "ita": {
+                "common": "Territorio britannico dell'oceano indiano",
+                "official": "Territorio britannico dell'Oceano Indiano"
+            },
+            "per": {
+                "common": "قلمرو بریتانیا در اقیانوس هند",
+                "official": "قلمرو بریتانیا در اقیانوس هند"
+            },
+            "spa": {
+                "common": "Territorio Británico del Océano Índico",
+                "official": "Territorio Británico del Océano Índico"
+            },
+            "urd": {
+                "common": "برطانوی بحرہند خطہ",
+                "official": "برطانوی بحرہند خطہ"
+            },
+            "nld": {
+                "common": "Britse Gebieden in de Indische Oceaan",
+                "official": "Brits Indische Oceaan Territorium"
+            },
+            "jpn": {
+                "common": "イギリス領インド洋地域",
+                "official": "イギリス領インド洋地域"
+            },
+            "hrv": {
+                "common": "Britanski Indijskooceanski teritorij",
+                "official": "British Indian Ocean Territory"
+            },
+            "srp": {
+                "common": "Британска територија Индијског океана",
+                "official": "Британска територија Индијског океана"
+            },
+            "slk": {
+                "common": "Britské indickooceánske územie",
+                "official": "Britské indickooceánske územie"
+            },
+            "cym": {
+                "common": "Tiriogaeth Brydeinig Cefnfor India",
+                "official": "Tiriogaeth Brydeinig Cefnfor India"
+            }
+        },
+        "altSpellings": [
+            "IO"
+        ],
+        "area": 60.0,
+        "languages": {
+            "eng": "English"
+        },
+        "maps": {
+            "openStreetMaps": "https:\/\/www.openstreetmap.org\/relation\/1993867",
+            "googleMaps": "https:\/\/goo.gl\/maps\/bheNucgekVEYozoi6"
+        },
+        "subregion": "Eastern Africa",
+        "idd": {
+            "suffixes": [
+                "46"
+            ],
+            "root": "+2"
+        },
+        "tld": [
+            ".io"
+        ],
+        "unMember": false,
+        "continents": [
+            "Asia"
+        ],
+        "population": 3000,
+        "startOfWeek": "monday",
+        "timezones": [
+            "UTC+06:00"
+        ],
+        "name": {
+            "nativeName": {
+                "eng": {
+                    "common": "British Indian Ocean Territory",
+                    "official": "British Indian Ocean Territory"
+                }
+            },
+            "common": "British Indian Ocean Territory",
+            "official": "British Indian Ocean Territory"
+        },
+        "cca3": "IOT",
+        "region": "Africa",
+        "latlng": [
+            -6.0,
+            71.5
+        ],
+        "cca2": "IO",
+        "status": "officially-assigned",
+        "currencies": {
+            "USD": {
+                "symbol": "$",
+                "name": "United States dollar"
+            }
+        }
+    },
+    {
+        "capital": [
+            "New Delhi"
+        ],
+        "flag": "🇮🇳",
+        "independent": true,
+        "landlocked": false,
+        "borders": [
+            "BGD",
+            "BTN",
+            "MMR",
+            "CHN",
+            "NPL",
+            "PAK"
+        ],
+        "postalCode": {
+            "regex": "^(\\d{6})$",
+            "format": "######"
+        },
+        "flags": {
+            "svg": "https:\/\/flagcdn.com\/in.svg",
+            "png": "https:\/\/flagcdn.com\/w320\/in.png",
+            "alt": "The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes \u2014 the Ashoka Chakra \u2014 is centered in the white band."
+        },
+        "capitalInfo": {
+            "latlng": [
+                28.6,
+                77.2
+            ]
+        },
+        "ccn3": "356",
+        "coatOfArms": {
+            "svg": "https:\/\/mainfacts.com\/media\/images\/coats_of_arms\/in.svg",
+            "png": "https:\/\/mainfacts.com\/media\/images\/coats_of_arms\/in.png"
+        },
+        "demonyms": {
+            "fra": {
+                "f": "Indienne",
+                "m": "Indien"
+            },
+            "eng": {
+                "f": "Indian",
+                "m": "Indian"
+            }
+        },
+        "fifa": "IND",
+        "cioc": "IND",
+        "car": {
+            "side": "left",
+            "signs": [
+                "IND"
+            ]
+        },
+        "translations": {
+            "hun": {
+                "common": "India",
+                "official": "Indiai Köztársaság"
+            },
+            "swe": {
+                "common": "Indien",
+                "official": "Republiken Indien"
+            },
+            "zho": {
+                "common": "印度",
+                "official": "印度共和国"
+            },
+            "est": {
+                "common": "India",
+                "official": "India Vabariik"
+            },
+            "fin": {
+                "common": "Intia",
+                "official": "Intian tasavalta"
+            },
+            "pol": {
+                "common": "Indie",
+                "official": "Republika Indii"
+            },
+            "kor": {
+                "common": "인도",
+                "official": "인도 공화국"
+            },
+            "ces": {
+                "common": "Indie",
+                "official": "Indická republika"
+            },
+            "tur": {
+                "common": "Hindistan",
+                "official": "Hindistan Cumhuriyeti"
+            },
+            "ara": {
+                "common": "الهند",
+                "official": "جمهورية الهند"
+            },
+            "rus": {
+                "common": "Индия",
+                "official": "Республика Индия"
+            },
+            "por": {
+                "common": "Índia",
+                "official": "República da Índia"
+            },
+            "bre": {
+                "common": "India",
+                "official": "Republik India"
+            },
+            "fra": {
+                "common": "Inde",
+                "official": "République de l'Inde"
+            },
+            "deu": {
+                "common": "Indien",
+                "official": "Republik Indien"
+            },
+            "ita": {
+                "common": "India",
+                "official": "Repubblica dell'India"
+            },
+            "per": {
+                "common": "هند",
+                "official": "جمهوری هندوستان"
+            },
+            "spa": {
+                "common": "India",
+                "official": "República de la India"
+            },
+            "urd": {
+                "common": "بھارت",
+                "official": "جمہوریہ بھارت"
+            },
+            "nld": {
+                "common": "India",
+                "official": "Republiek India"
+            },
+            "jpn": {
+                "common": "インド",
+                "official": "インド共和国"
+            },
+            "hrv": {
+                "common": "Indija",
+                "official": "Republika Indija"
+            },
+            "srp": {
+                "common": "Индија",
+                "official": "Република Индија"
+            },
+            "slk": {
+                "common": "India",
+                "official": "Indická republika"
+            },
+            "cym": {
+                "common": "India",
+                "official": "Republic of India"
+            }
+        },
+        "altSpellings": [
+            "IN",
+            "Bhārat",
+            "Republic of India",
+            "Bharat Ganrajya",
+            "இந்தியா"
+        ],
+        "area": 3287590.0,
+        "languages": {
+            "tam": "Tamil",
+            "hin": "Hindi",
+            "eng": "English"
+        },
+        "maps": {
+            "openStreetMaps": "https:\/\/www.openstreetmap.org\/relation\/304716",
+            "googleMaps": "https:\/\/goo.gl\/maps\/WSk3fLwG4vtPQetp7"
+        },
+        "subregion": "Southern Asia",
+        "idd": {
+            "suffixes": [
+                "1"
+            ],
+            "root": "+9"
+        },
+        "tld": [
+            ".in"
+        ],
+        "unMember": true,
+        "gini": {
+            "2011": 35.7
+        },
+        "continents": [
+            "Asia"
+        ],
+        "population": 1380004385,
+        "startOfWeek": "monday",
+        "timezones": [
+            "UTC+05:30"
+        ],
+        "name": {
+            "nativeName": {
+                "tam": {
+                    "common": "இந்தியா",
+                    "official": "இந்தியக் குடியரசு"
+                },
+                "hin": {
+                    "common": "भारत",
+                    "official": "भारत गणराज्य"
+                },
+                "eng": {
+                    "common": "India",
+                    "official": "Republic of India"
+                }
+            },
+            "common": "India",
+            "official": "Republic of India"
+        },
+        "cca3": "IND",
+        "region": "Asia",
+        "latlng": [
+            20.0,
+            77.0
+        ],
+        "cca2": "IN",
+        "status": "officially-assigned",
+        "currencies": {
+            "INR": {
+                "symbol": "\u20B9",
+                "name": "Indian rupee"
+            }
+        }
+    }
+]
