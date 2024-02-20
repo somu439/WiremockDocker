@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Threadgroup">
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">C:\SMART\LibariesSMART</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User config- Main">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="====End point URL====" elementType="Argument">
+            <stringProp name="Argument.name">====End point URL====</stringProp>
+            <stringProp name="Argument.value">Enter values====</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">====</stringProp>
+          </elementProp>
+          <elementProp name="IP_Protocol" elementType="Argument">
+            <stringProp name="Argument.name">IP_Protocol</stringProp>
+            <stringProp name="Argument.value">http</stringProp>
+            <stringProp name="Argument.desc">Enter type of protocol &quot;http&quot; or &quot;https&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="IP_Hostname" elementType="Argument">
+            <stringProp name="Argument.name">IP_Hostname</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Enter IP or hostname, ex: localhost, 10.100.200.150</stringProp>
+          </elementProp>
+          <elementProp name="IP_Port" elementType="Argument">
+            <stringProp name="Argument.name">IP_Port</stringProp>
+            <stringProp name="Argument.value">8092</stringProp>
+            <stringProp name="Argument.desc">Enter port number, 8092, 8093</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="IP_ServerPath" elementType="Argument">
+            <stringProp name="Argument.name">IP_ServerPath</stringProp>
+            <stringProp name="Argument.value">/DAService</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Enter full path after IP &amp; port, ex: &quot;/DAService&quot; for PCSM xml service</stringProp>
+          </elementProp>
+          <elementProp name="====Test conditions====" elementType="Argument">
+            <stringProp name="Argument.name">====Test conditions====</stringProp>
+            <stringProp name="Argument.value">Enter values====</stringProp>
+            <stringProp name="Argument.desc">====</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="mainFolder" elementType="Argument">
+            <stringProp name="Argument.name">mainFolder</stringProp>
+            <stringProp name="Argument.value">C:\SMART\Main\DemoTest</stringProp>
+            <stringProp name="Argument.desc">Folder path: Enter FULL path of the Test suite</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FlowName" elementType="Argument">
+            <stringProp name="Argument.name">FlowName</stringProp>
+            <stringProp name="Argument.value">Demo_XML</stringProp>
+            <stringProp name="Argument.desc">Folder: Enter folder name, contains data in csv (InputData, OutputData, IgnoreFields)</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="TestRun" elementType="Argument">
+            <stringProp name="Argument.name">TestRun</stringProp>
+            <stringProp name="Argument.value">TestRun2</stringProp>
+            <stringProp name="Argument.desc">Folder: Enter folder name, All test results will go into this folder</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FileExtension" elementType="Argument">
+            <stringProp name="Argument.name">FileExtension</stringProp>
+            <stringProp name="Argument.value">xml</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Enter type of service, &quot;xml&quot; or &quot;json&quot;</stringProp>
+          </elementProp>
+          <elementProp name="SuffixReq" elementType="Argument">
+            <stringProp name="Argument.name">SuffixReq</stringProp>
+            <stringProp name="Argument.value">_req</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Add suffix to the request filename</stringProp>
+          </elementProp>
+          <elementProp name="SuffixResp" elementType="Argument">
+            <stringProp name="Argument.name">SuffixResp</stringProp>
+            <stringProp name="Argument.value">_res</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Add suffix to the response filename</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">Enter endpoint url and test conditions</stringProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="1 Extract Data" enabled="false">
+        <stringProp name="TestPlan.comments">Extract the data fields from XML files in bulk and map the test data in csv. Loop count=1</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User config" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="====Generate JSON Template Condition===" elementType="Argument">
+              <stringProp name="Argument.name">====Generate JSON Template Condition===</stringProp>
+              <stringProp name="Argument.value">=====ENTER VALID VALUES========</stringProp>
+              <stringProp name="Argument.desc">====Description===</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GenerateJsonTemplate" elementType="Argument">
+              <stringProp name="Argument.name">GenerateJsonTemplate</stringProp>
+              <stringProp name="Argument.value">N</stringProp>
+              <stringProp name="Argument.desc">File: This will generate Json template(json) and default file (csv)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="====Test data prep===" elementType="Argument">
+              <stringProp name="Argument.name">====Test data prep===</stringProp>
+              <stringProp name="Argument.value">=====ENTER VALID VALUES========</stringProp>
+              <stringProp name="Argument.desc">====Description===</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="sourceFolder" elementType="Argument">
+              <stringProp name="Argument.name">sourceFolder</stringProp>
+              <stringProp name="Argument.value">XML_Files</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Folder: Enter the folder name containing XML files</stringProp>
+            </elementProp>
+            <elementProp name="DataTransposed" elementType="Argument">
+              <stringProp name="Argument.name">DataTransposed</stringProp>
+              <stringProp name="Argument.value">Y</stringProp>
+              <stringProp name="Argument.desc">Y or N</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mapFile" elementType="Argument">
+              <stringProp name="Argument.name">mapFile</stringProp>
+              <stringProp name="Argument.value">MLTemp.csv</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">File: Map file name in csv for INPUT and OUTPUT fields</stringProp>
+            </elementProp>
+            <elementProp name="Namespace" elementType="Argument">
+              <stringProp name="Argument.name">Namespace</stringProp>
+              <stringProp name="Argument.value">MGResponse</stringProp>
+              <stringProp name="Argument.desc">Exclude the NS when generating data, ex: &quot;.soap:envelope.soap:body.DAXMLDocument&quot;</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="TemplateName" elementType="Argument">
+              <stringProp name="Argument.name">TemplateName</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.desc">File: XML or JSON template file name</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.comments">Enter namespace to exclude during comparision, PCSM json= &quot;DAJSONDocument&quot;, xml=&quot;soap:envelope.soap:body.DAXMLDocument&quot;</stringProp>
+        </Arguments>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SMART logic" enabled="true"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="System variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="sourceDirectory" elementType="Argument">
+                <stringProp name="Argument.name">sourceDirectory</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\${sourceFolder}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Request folder</stringProp>
+              </elementProp>
+              <elementProp name="destDirectory" elementType="Argument">
+                <stringProp name="Argument.name">destDirectory</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Destination folder</stringProp>
+              </elementProp>
+              <elementProp name="Template" elementType="Argument">
+                <stringProp name="Argument.name">Template</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\${TemplateName}.${FileExtension}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">XML Template folder</stringProp>
+              </elementProp>
+              <elementProp name="mappFile" elementType="Argument">
+                <stringProp name="Argument.name">mappFile</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\${mapFile}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Map file name</stringProp>
+              </elementProp>
+              <elementProp name="JsonSampleFilePath" elementType="Argument">
+                <stringProp name="Argument.name">JsonSampleFilePath</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\${JsonSampleFile}</stringProp>
+                <stringProp name="Argument.desc">Json Template folder</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="JsonDefFileOut" elementType="Argument">
+                <stringProp name="Argument.name">JsonDefFileOut</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\Defaults.csv</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="JsonTemplateFileOut" elementType="Argument">
+                <stringProp name="Argument.name">JsonTemplateFileOut</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\DataPrep\\JsonTemplate.json</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Prepare data" enabled="true">
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import SMARTv5.*;
+import org.apache.commons.io.*;
+String dest=null;
+String src =null;
+String OpTrans=vars.get(&quot;FileExtension&quot;);
+String GenJsonFlag=vars.get(&quot;GenerateJsonTemplate&quot;);
+//Generating Json template and defaults 
+if (GenJsonFlag.contains(&quot;Y&quot;)){
+log.info(&quot;Generating Json template&quot;);
+//log.info(vars.get(&quot;Template&quot;)+vars.get(&quot;JsonDefFileOut&quot;)+vars.get(&quot;Namespace&quot;));
+
+com.exp.smart.json.GenDefaults.GenerateJsonDefCSV(vars.get(&quot;Template&quot;),vars.get(&quot;JsonDefFileOut&quot;), &quot;&quot;,vars.get(&quot;Namespace&quot;));
+JOptionPane.showMessageDialog(null, &quot;Default csv generated\nLocation: &quot;+vars.get(&quot;JsonDefFileOut&quot;), &quot;SMART JSON&quot;, JOptionPane.INFORMATION_MESSAGE);
+
+//log.info(vars.get(&quot;Template&quot;)+vars.get(&quot;JsonTemplateFileOut&quot;)+vars.get(&quot;JsonDefFileOut&quot;)+vars.get(&quot;Namespace&quot;));
+com.exp.smart.utils.JsonGenTemplate.GenerateTemplate(vars.get(&quot;Template&quot;),vars.get(&quot;JsonTemplateFileOut&quot;),vars.get(&quot;JsonDefFileOut&quot;),vars.get(&quot;Namespace&quot;));
+
+}
+else{
+//Extracting XML files to CSV
+if (OpTrans.contains(&quot;xml&quot;)){
+String xmlNameSpace=&quot;.&quot;+vars.get(&quot;Namespace&quot;);
+	log.info(&quot;Extracting xml data&quot;);
+com.exp.smart.xml.XmlGetData.ExtractData(vars.get(&quot;sourceDirectory&quot;),vars.get(&quot;DataTransposed&quot;),vars.get(&quot;Template&quot;),xmlNameSpace, vars.get(&quot;mappFile&quot;));
+}
+else if (OpTrans.contains(&quot;json&quot;)){ 
+log.info(&quot;Extracting Json data&quot;);
+com.exp.smart.json.GetData.ExtractJsonData(vars.get(&quot;sourceDirectory&quot;),vars.get(&quot;DataTransposed&quot;),vars.get(&quot;Template&quot;), vars.get(&quot;Namespace&quot;), vars.get(&quot;mappFile&quot;));
+// sourceDirectory,  DataFormatFlag,  jsonTemplate,  jsonNamespace,  mappFile
+}
+else {
+log.info(&quot;Incorrect file extension selected&quot;);
+}
+}
+</stringProp>
+            <stringProp name="scriptLanguage">java</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="2 Generate Data Set" enabled="false">
+        <stringProp name="TestPlan.comments">Merge defaults and user data to generate Full data set for test execution. Loop count=1</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User config" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="====Test data prep===" elementType="Argument">
+              <stringProp name="Argument.name">====Test data prep===</stringProp>
+              <stringProp name="Argument.value">=====ENTER VALID VALUES========</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">====Description===</stringProp>
+            </elementProp>
+            <elementProp name="UserData" elementType="Argument">
+              <stringProp name="Argument.name">UserData</stringProp>
+              <stringProp name="Argument.value">INPUT_Updated3.csv</stringProp>
+              <stringProp name="Argument.desc">User data in csv (UTF-8)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Defaults" elementType="Argument">
+              <stringProp name="Argument.name">Defaults</stringProp>
+              <stringProp name="Argument.value">Defaults.csv</stringProp>
+              <stringProp name="Argument.desc">Defaults in csv (UTF-8)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="DestData" elementType="Argument">
+              <stringProp name="Argument.name">DestData</stringProp>
+              <stringProp name="Argument.value">InputDataF1.csv</stringProp>
+              <stringProp name="Argument.desc">Merge data file name in csv</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.comments">Please enter the &quot;Value&quot; for the relevant variable &quot;Name:&quot;</stringProp>
+        </Arguments>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SMART logic" enabled="true"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="System variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="============Config settings=====" elementType="Argument">
+                <stringProp name="Argument.name">============Config settings=====</stringProp>
+                <stringProp name="Argument.value">========================</stringProp>
+                <stringProp name="Argument.desc">========================</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="UserInputPath" elementType="Argument">
+                <stringProp name="Argument.name">UserInputPath</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\${FlowName}\\${UserData}</stringProp>
+                <stringProp name="Argument.desc">User data path</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="DefaultsPath" elementType="Argument">
+                <stringProp name="Argument.name">DefaultsPath</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\${FlowName}\\${Defaults}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Defaults data path</stringProp>
+              </elementProp>
+              <elementProp name="DestPath" elementType="Argument">
+                <stringProp name="Argument.name">DestPath</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\${FlowName}\\${DestData}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Output data path</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Prepare data" enabled="true">
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">//import artJSON.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import SMARTv5.*;
+import org.apache.commons.io.*;
+
+log.info(&quot;Merging data &quot;);
+//log.info(vars.get(&quot;UserInputPath&quot;)+&quot;\n&quot;+ vars.get(&quot;DefaultsPath&quot;)+&quot;\n&quot;+ vars.get(&quot;DestPath&quot;));
+com.exp.smart.utils.MergeData.MergeUserData(vars.get(&quot;UserInputPath&quot;),vars.get(&quot;DefaultsPath&quot;), vars.get(&quot;DestPath&quot;));
+</stringProp>
+            <stringProp name="scriptLanguage">java</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="3 Run Test Cases" enabled="true">
+        <stringProp name="TestPlan.comments">Run test cases for XML/JSON requests,responses will be stored in TestResults\&lt;TestRun&gt; folder, Loop count= Infinite</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/${FileExtension}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SMART logic" enabled="true"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="System variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="============Config settings=====" elementType="Argument">
+                <stringProp name="Argument.name">============Config settings=====</stringProp>
+                <stringProp name="Argument.value">========================</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">========================</stringProp>
+              </elementProp>
+              <elementProp name="wsReq" elementType="Argument">
+                <stringProp name="Argument.name">wsReq</stringProp>
+                <stringProp name="Argument.value">Request</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Request folder</stringProp>
+              </elementProp>
+              <elementProp name="ExpResp" elementType="Argument">
+                <stringProp name="Argument.name">ExpResp</stringProp>
+                <stringProp name="Argument.value">Response</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Expected Response folder</stringProp>
+              </elementProp>
+              <elementProp name="ReqTestData" elementType="Argument">
+                <stringProp name="Argument.name">ReqTestData</stringProp>
+                <stringProp name="Argument.value">TestData\\${FlowName}\\InputData.csv</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Test data for the request XMLs</stringProp>
+              </elementProp>
+              <elementProp name="ResultsPath" elementType="Argument">
+                <stringProp name="Argument.name">ResultsPath</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}\\</stringProp>
+                <stringProp name="Argument.desc">Test results path</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ActResp" elementType="Argument">
+                <stringProp name="Argument.name">ActResp</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}\\Response\\</stringProp>
+                <stringProp name="Argument.desc">response XMLs</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Create Result Folder and response log file" enabled="true"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+try{
+// Create Test run folder if doesnt exist
+	File dir=new File(vars.get(&quot;ResultsPath&quot;));
+	if(!dir.isDirectory()){
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot; \&apos; folder does not exists&quot;);
+		dir.mkdir();
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot;\&apos; folder created&quot;);
+	}
+// Create response folder if it doesnt exist	
+	File dir=new File(vars.get(&quot;ActResp&quot;));
+	if(!dir.isDirectory()){
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot; \&apos; folder does not exists&quot;);
+		dir.mkdir();
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot;\&apos; folder created&quot;);
+	}
+
+// create Response log file
+//	String ResLog=vars.get(&quot;ResultsPath&quot;)+&quot;\\ResponseLog.csv&quot;;
+//	File file1 = new File(ResLog);
+//	log.info(&quot;INFO Response log created-&gt; &quot;+ResLog);
+//	FileWriter fileWriter = new FileWriter(file1,true);
+//	String appendLog=&quot;Test case,Application reference ID,Response description\n&quot;;
+//	fileWriter.write(appendLog);
+//	fileWriter.flush();
+//	fileWriter.close();		
+} 
+		catch (IOException e) {
+			log.error(&quot;ERROR: error when creating Response log file&quot;+e.printStackTrace());
+		}</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="File - ${#INPUT}" enabled="false">
+          <stringProp name="HTTPSampler.domain">${IP_Hostname}</stringProp>
+          <stringProp name="HTTPSampler.port">${IP_Port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${IP_Protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${IP_ServerPath}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${File}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Request fields" enabled="true">
+            <stringProp name="filename">${mainFolder}\\${ReqTestData}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+          </CSVDataSet>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="PreProcess request - File" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import org.apache.commons.io.FileUtils;
+//import org.apache.commons.io.IOUtils;
+//log.info(&quot;INFO: FILE based testing&quot;);
+
+String reqFile=vars.get(&quot;mainFolder&quot;)+&quot;\\Request\\&quot;+vars.get(&quot;#INPUT&quot;)+vars.get(&quot;SuffixReq&quot;)+&quot;.&quot;+vars.get(&quot;FileExtension&quot;);
+log.info(&quot;INFO: Request file-&gt; &quot;+reqFile);
+String file = FileUtils.readFileToString(new File(reqFile),&quot;UTF-8&quot;);
+//log.info(file);
+vars.put(&quot;File&quot;,new String((file.getBytes(&quot;UTF-8&quot;))));</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Output: ${#INPUT}" enabled="true">
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.apache.commons.io.*;
+//Setting values
+
+String TestCase=vars.get(&quot;#INPUT&quot;);
+String TestTitle=vars.get(&quot;extractAppRefID&quot;);
+String DescriptionFile=vars.get(&quot;Description&quot;);
+String SoapSheet=vars.get(&quot;SoapSheetName&quot;);
+String ActualSoapXML=null;
+
+try {
+	// Create Results folder and save Soap response XML
+	String samplerDataString=prev.getResponseDataAsString();
+
+	ActualSoapXML=vars.get(&quot;ActResp&quot;)+&quot;\\&quot;+vars.get(&quot;#INPUT&quot;)+vars.get(&quot;SuffixResp&quot;)+&quot;.&quot;+vars.get(&quot;FileExtension&quot;);
+	log.info(&quot;INFO: Response file-&gt; &quot;+ActualSoapXML);
+	//log.info(&quot;INFO: Reference ID-&gt; &quot;+TestTitle);
+	File file = new File(ActualSoapXML);
+	FileWriter fileWriter = new FileWriter(file);
+	fileWriter.write(samplerDataString);
+	//			fileWriter.flush();
+	fileWriter.close();
+	
+	//Write results log for PCO that contains reference ID
+//	String ResLog=vars.get(&quot;ResultsPath&quot;)+&quot;\\ResponseLog.csv&quot;;
+//	File file1 = new File(ResLog);
+//	log.info(&quot;INFO Response log=&quot;+ResLog);
+//	FileWriter fileWriter = new FileWriter(file1,true);
+//	String appendLog=vars.get(&quot;#INPUT&quot;)+&quot;,&quot;+vars.get(&quot;extractAppRefID&quot;)+&quot;,&quot;+vars.get(&quot;extractRespDescription&quot;);
+//	fileWriter.append(appendLog+&apos;\n&apos;);
+//	fileWriter.flush();
+//	fileWriter.close();
+	
+	log.info(&quot;*****************DONE&quot;);
+} catch (IOException e) {
+	log.info(&quot;ERROR: error when saving response file&quot;+e.printStackTrace());
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+            <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
+            <stringProp name="SizeAssertion.size">1000</stringProp>
+            <intProp name="SizeAssertion.operator">3</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+          </SizeAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Template - ${#INPUT}" enabled="true">
+          <stringProp name="HTTPSampler.domain">${IP_Hostname}</stringProp>
+          <stringProp name="HTTPSampler.port">${IP_Port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${IP_Protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${IP_ServerPath}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Request fields" enabled="true">
+            <stringProp name="filename">${mainFolder}\\${ReqTestData}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+          </CSVDataSet>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="============Config settings=====" elementType="Argument">
+                <stringProp name="Argument.name">============Config settings=====</stringProp>
+                <stringProp name="Argument.value">========================</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">========================</stringProp>
+              </elementProp>
+              <elementProp name="wsReq" elementType="Argument">
+                <stringProp name="Argument.name">wsReq</stringProp>
+                <stringProp name="Argument.value">Request</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Folder of request XMLs</stringProp>
+              </elementProp>
+              <elementProp name="ExpResp" elementType="Argument">
+                <stringProp name="Argument.name">ExpResp</stringProp>
+                <stringProp name="Argument.value">Response</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Folder of old response XMLs</stringProp>
+              </elementProp>
+              <elementProp name="ReqTestData" elementType="Argument">
+                <stringProp name="Argument.name">ReqTestData</stringProp>
+                <stringProp name="Argument.value">TestData\TestData.csv</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Test data for the request XMLs</stringProp>
+              </elementProp>
+              <elementProp name="ActResp" elementType="Argument">
+                <stringProp name="Argument.name">ActResp</stringProp>
+                <stringProp name="Argument.value">${TestResults_Path}\\Response\\</stringProp>
+                <stringProp name="Argument.desc"> response XMLs</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String data = sampler.getArguments().getArgument(0).getValue();
+//data=data.replaceAll(&quot;&lt;.*&gt;&lt;.*&gt;&quot;,&quot;&quot;);
+//data=data.replaceAll(&quot;/.00&lt;&quot;,&quot;&lt;&quot;);
+try {
+//		NEW=vars.get(&quot;mainFolder&quot;)+&quot;\\&quot;+vars.get(&quot;reqFolder&quot;)+&quot;\\&quot;+vars.get(&quot;reqFile&quot;)+&quot;_req.xml&quot;;
+		NEW=vars.get(&quot;mainFolder&quot;)+&quot;\\Request\\&quot;+vars.get(&quot;#INPUT&quot;)+vars.get(&quot;SuffixReq&quot;)+&quot;.&quot;+vars.get(&quot;FileExtension&quot;);
+//		log.info(&quot;INFO: Request file-&gt; &quot;+vars.get(&quot;TestCase&quot;));
+		log.info(&quot;INFO: Request file-&gt; &quot;+NEW);	
+			File file = new File(NEW);
+			FileWriter fileWriter = new FileWriter(file);
+			fileWriter.write(data);
+//			fileWriter.flush();
+			fileWriter.close();
+//			sampler.getArguments().removeAllArguments();
+////			sampler.addNonEncodedArgument(,data,);
+//			sampler.setPostBodyRaw(true);
+		} 
+		catch (IOException e) {
+			log.info(&quot;ERROR: error when generating request file&quot;+e.printStackTrace());
+		}</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Output: ${TestCase}" enabled="true">
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.apache.commons.io.*;
+//Setting values
+
+String TestCase=vars.get(&quot;#INPUT&quot;);
+String TestTitle=vars.get(&quot;extractAppRefID&quot;);
+String DescriptionFile=vars.get(&quot;Description&quot;);
+String SoapSheet=vars.get(&quot;SoapSheetName&quot;);
+String ActualSoapXML=null;
+
+try {
+//	File dir=new File(vars.get(&quot;ActResp&quot;));
+//	if(!dir.isDirectory()){
+//		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot; \&apos; folder does not exists&quot;);
+//		dir.mkdir();
+//		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot;\&apos; folder created&quot;);
+//	}
+
+	// Create Results folder and save Soap response XML
+	String samplerDataString=prev.getResponseDataAsString();
+
+	ActualSoapXML=vars.get(&quot;ActResp&quot;)+&quot;\\&quot;+vars.get(&quot;#INPUT&quot;)+vars.get(&quot;SuffixResp&quot;)+&quot;.&quot;+vars.get(&quot;FileExtension&quot;);
+	log.info(&quot;INFO: Response file-&gt; &quot;+ActualSoapXML);
+	//log.info(&quot;INFO: Reference ID-&gt; &quot;+TestTitle);
+	File file = new File(ActualSoapXML);
+	FileWriter fileWriter = new FileWriter(file);
+	fileWriter.write(samplerDataString);
+	//			fileWriter.flush();
+	fileWriter.close();
+	
+	//Write results log for PCO that contains reference ID
+//	String ResLog=vars.get(&quot;ResultsPath&quot;)+&quot;\\ResponseLog.csv&quot;;
+//	File file1 = new File(ResLog);
+//	log.info(&quot;INFO Response log=&quot;+ResLog);
+//	FileWriter fileWriter = new FileWriter(file1,true);
+//	String appendLog=vars.get(&quot;#INPUT&quot;)+&quot;,&quot;+vars.get(&quot;extractAppRefID&quot;)+&quot;,&quot;+vars.get(&quot;extractRespDescription&quot;);
+//	fileWriter.append(appendLog+&apos;\n&apos;);
+//	fileWriter.flush();
+//	fileWriter.close();
+	
+	log.info(&quot;*****************DONE&quot;);
+} catch (IOException e) {
+	log.info(&quot;ERROR: error when saving response file&quot;+e.printStackTrace());
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+            <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
+            <stringProp name="SizeAssertion.size">1000</stringProp>
+            <intProp name="SizeAssertion.operator">3</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+          </SizeAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="4 Compare Results" enabled="false">
+        <stringProp name="TestPlan.comments">Compare expected (OutputData.csv) vs Actuals (xml/json files). Loop count=1</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User config" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="============Config settings=====" elementType="Argument">
+              <stringProp name="Argument.name">============Config settings=====</stringProp>
+              <stringProp name="Argument.value">========================</stringProp>
+              <stringProp name="Argument.desc">========================</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="NameSpace" elementType="Argument">
+              <stringProp name="Argument.name">NameSpace</stringProp>
+              <stringProp name="Argument.value">soap:envelope.soap:body.DAXMLDocument</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Namespace to exclude</stringProp>
+            </elementProp>
+            <elementProp name="decimalTolerance" elementType="Argument">
+              <stringProp name="Argument.name">decimalTolerance</stringProp>
+              <stringProp name="Argument.value">0.001</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">enter the threshold number to compare with actual response values</stringProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.comments">Enter namespace to exclude during comparision, PCSM json= &quot;DAJSONDocument&quot;, xml=&quot;soap:envelope.soap:body.DAXMLDocument&quot;</stringProp>
+        </Arguments>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SMART logic" enabled="true"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="System variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="============Config settings=====" elementType="Argument">
+                <stringProp name="Argument.name">============Config settings=====</stringProp>
+                <stringProp name="Argument.value">========================</stringProp>
+                <stringProp name="Argument.desc">========================</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sourceDirectory" elementType="Argument">
+                <stringProp name="Argument.name">sourceDirectory</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}\\Response</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="destDirectory" elementType="Argument">
+                <stringProp name="Argument.name">destDirectory</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="xmlTemplate" elementType="Argument">
+                <stringProp name="Argument.name">xmlTemplate</stringProp>
+                <stringProp name="Argument.value">C:\\SISv2.9\\strategies\\MGDEC_sample.xml</stringProp>
+                <stringProp name="Argument.desc">Dummy for now</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="mappFile" elementType="Argument">
+                <stringProp name="Argument.name">mappFile</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\${FlowName}\\ExpectedOutputData.csv</stringProp>
+                <stringProp name="Argument.desc">This is the expected test data file</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ignoreElements" elementType="Argument">
+                <stringProp name="Argument.name">ignoreElements</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestData\\${FlowName}\\IgnoreFields.csv</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">//import artJSON.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import SMARTv5.*;
+import org.apache.commons.io.*;
+//String dest=null;
+//String src =null;
+double Tol=new Double(vars.get(&quot;decimalTolerance&quot;));
+log.info(&quot;Test result folder &quot;+vars.get(&quot;sourceDirectory&quot;));
+log.info(&quot;Dest folder &quot;+vars.get(&quot;destDirectory&quot;));
+log.info(&quot;Ignore file &quot;+vars.get(&quot;ignoreElements&quot;));
+
+String flag=vars.get(&quot;FileExtension&quot;);
+
+if (flag.contains(&quot;xml&quot;)){
+	log.info(vars.get(&quot;FileExtension&quot;));
+String xmlNameSpace=&quot;.&quot;+vars.get(&quot;NameSpace&quot;);
+com.exp.smart.xml.XmlMatchData.MatchXmlData(vars.get(&quot;sourceDirectory&quot;),vars.get(&quot;destDirectory&quot;),xmlNameSpace, vars.get(&quot;mappFile&quot;), vars.get(&quot;SuffixResp&quot;), vars.get(&quot;ignoreElements&quot;), Tol);
+}
+else if (flag.contains(&quot;json&quot;)){
+com.exp.smart.json.MatchData.MatchJsonData(vars.get(&quot;sourceDirectory&quot;),vars.get(&quot;destDirectory&quot;),vars.get(&quot;NameSpace&quot;), vars.get(&quot;mappFile&quot;), vars.get(&quot;SuffixResp&quot;), vars.get(&quot;ignoreElements&quot;), Tol);
+}
+else {
+	log.info(&quot;Failed to compare, pleae check again&quot;);
+}
+//MatchXmlData(sourceDirectory, destDirectory, Namespace, mappFile, &quot;_resp&quot;, ignoreElementsFile, decimalTolerance);;
+</stringProp>
+            <stringProp name="scriptLanguage">java</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="5 Manual Test" enabled="false">
+        <stringProp name="TestPlan.comments">Run test case manually and extract the trace logs from unix or windows servers. Loop count=1</stringProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User config" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="====Server details===" elementType="Argument">
+              <stringProp name="Argument.name">====Server details===</stringProp>
+              <stringProp name="Argument.value">=====ENTER VALID VALUES========</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">====Description===</stringProp>
+            </elementProp>
+            <elementProp name="sshUserName" elementType="Argument">
+              <stringProp name="Argument.name">sshUserName</stringProp>
+              <stringProp name="Argument.value">edaadmin</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Server username (unix)</stringProp>
+            </elementProp>
+            <elementProp name="sshPassword" elementType="Argument">
+              <stringProp name="Argument.name">sshPassword</stringProp>
+              <stringProp name="Argument.value">exp1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Server password (unix)</stringProp>
+            </elementProp>
+            <elementProp name="sshPassphrase" elementType="Argument">
+              <stringProp name="Argument.name">sshPassphrase</stringProp>
+              <stringProp name="Argument.value">ssh-ed25519 255 O1lMPX/yyaEWufU2Hmob7TFcoZuKVCNGcPeZMlaDfsI=</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Enter this key from WinSCP, session-&gt; &quot;server/protocal information&quot;</stringProp>
+            </elementProp>
+            <elementProp name="RuntimePath" elementType="Argument">
+              <stringProp name="Argument.name">RuntimePath</stringProp>
+              <stringProp name="Argument.value">/apps/exp/SIS/sis/logs</stringProp>
+              <stringProp name="Argument.desc">Enter log folder path,&quot;/apps/exp/SIS/sis/logs&quot; for Unix, windows server&quot;\\&lt;IP&gt;\SISv29\sis\logs&quot;, this folder must be accessable from local</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="====Config settings=====" elementType="Argument">
+              <stringProp name="Argument.name">====Config settings=====</stringProp>
+              <stringProp name="Argument.value">========================</stringProp>
+              <stringProp name="Argument.desc">========================</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GetDALogs" elementType="Argument">
+              <stringProp name="Argument.name">GetDALogs</stringProp>
+              <stringProp name="Argument.value">Y</stringProp>
+              <stringProp name="Argument.desc">Get Application logs from the Windows or Unix server (Y/N)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="isWindows" elementType="Argument">
+              <stringProp name="Argument.name">isWindows</stringProp>
+              <stringProp name="Argument.value">N</stringProp>
+              <stringProp name="Argument.desc">Enter Y for windows, N for Unix/Linux</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reqFile" elementType="Argument">
+              <stringProp name="Argument.name">reqFile</stringProp>
+              <stringProp name="Argument.value">XML_008_req</stringProp>
+              <stringProp name="Argument.desc">File: filename without extension, place in &quot;Troubleshoot&quot; folder</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.comments">Config settings + SSH and SFTP server commands</stringProp>
+        </Arguments>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SMART logic"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="System variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="============Config settings=====" elementType="Argument">
+                <stringProp name="Argument.name">============Config settings=====</stringProp>
+                <stringProp name="Argument.value">========================</stringProp>
+                <stringProp name="Argument.desc">========================</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ResultsPath" elementType="Argument">
+                <stringProp name="Argument.name">ResultsPath</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}\\Troubleshoot\\</stringProp>
+                <stringProp name="Argument.desc">Troubleshoot folder</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ActResp" elementType="Argument">
+                <stringProp name="Argument.name">ActResp</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}\\Response\\</stringProp>
+                <stringProp name="Argument.desc">Response folder</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="Troubleshoot" elementType="Argument">
+                <stringProp name="Argument.name">Troubleshoot</stringProp>
+                <stringProp name="Argument.value">${mainFolder}\\TestResult\\${TestRun}\\</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Test run folder</stringProp>
+              </elementProp>
+              <elementProp name="TimeStamp" elementType="Argument">
+                <stringProp name="Argument.name">TimeStamp</stringProp>
+                <stringProp name="Argument.value">${__time(HHmmss)}</stringProp>
+                <stringProp name="Argument.desc">To append request filename and create a folder</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Truncate application logs">
+            <stringProp name="IfController.condition">&quot;${GetDALogs}&quot;==&quot;Y&quot;</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">false</boolProp>
+          </IfController>
+          <hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Truncate logs Windows server">
+              <stringProp name="IfController.condition">&quot;${isWindows}&quot;==&quot;Y&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">false</boolProp>
+            </IfController>
+            <hashTree>
+              <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Clear Application logs">
+                <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+                <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+                <stringProp name="SystemSampler.command">powershell</stringProp>
+                <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="Argument">
+                      <stringProp name="Argument.name"></stringProp>
+                      <stringProp name="Argument.value">Clear-Content -path * -filter Da*.log –force</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                  <collectionProp name="Arguments.arguments"/>
+                </elementProp>
+                <stringProp name="SystemSampler.directory">${RuntimePath}</stringProp>
+              </SystemSampler>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Truncate logs Linux server" enabled="true">
+              <stringProp name="IfController.condition">&quot;${isWindows}&quot;==&quot;N&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">false</boolProp>
+            </IfController>
+            <hashTree>
+              <org.apache.jmeter.protocol.ssh.sampler.SSHCommandSampler guiclass="TestBeanGUI" testclass="org.apache.jmeter.protocol.ssh.sampler.SSHCommandSampler" testname="SSH Truncate logs" enabled="true">
+                <stringProp name="hostname">${IP_Hostname}</stringProp>
+                <intProp name="port">22</intProp>
+                <intProp name="connectionTimeout">5000</intProp>
+                <stringProp name="username">${sshUserName}</stringProp>
+                <stringProp name="password">${sshPassword}</stringProp>
+                <stringProp name="sshkeyfile"></stringProp>
+                <stringProp name="passphrase">${sshPassphrase}</stringProp>
+                <stringProp name="command">truncate -s 0 ${RuntimePath}/Da*.log</stringProp>
+                <boolProp name="useReturnCode">true</boolProp>
+                <boolProp name="printStdErr">true</boolProp>
+                <stringProp name="TestPlan.comments">specify the command to run, ex: truncate -s 0 /apps/exp/business-process-server/Business\ Process\ Engine/Log/DA-TENANT10.log</stringProp>
+                <boolProp name="useTty">false</boolProp>
+              </org.apache.jmeter.protocol.ssh.sampler.SSHCommandSampler>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Create Result Folder and response log file"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+try{
+// Create Test run folder if doesnt exist
+	File dir=new File(vars.get(&quot;ResultsPath&quot;));
+	if(!dir.isDirectory()){
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot; \&apos; folder does not exists&quot;);
+		dir.mkdir();
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot;\&apos; folder created&quot;);
+	}
+// Create response folder if it doesnt exist	
+	File dir=new File(vars.get(&quot;ActResp&quot;));
+	if(!dir.isDirectory()){
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot; \&apos; folder does not exists&quot;);
+		dir.mkdir();
+		System.out.println(&quot;INFO: \&apos;&quot;+dir+&quot;\&apos; folder created&quot;);
+	}
+
+// create Response log file
+//	String ResLog=vars.get(&quot;ResultsPath&quot;)+&quot;\\ResponseLog.csv&quot;;
+//	File file1 = new File(ResLog);
+////	log.info(&quot;INFO Response log created-&gt; &quot;+ResLog);
+//	FileWriter fileWriter = new FileWriter(file1,true);
+//	String appendLog=&quot;Test case,Application reference ID,Response description\n&quot;;
+//	fileWriter.write(appendLog);
+//	fileWriter.flush();
+//	fileWriter.close();		
+} 
+		catch (IOException e) {
+			log.error(&quot;ERROR: error when creating Response log file&quot;+e.printStackTrace());
+		}</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test Case - ${reqFile}">
+            <stringProp name="TestPlan.comments">Enable this sampler for xml testing. Refer to user config and change the fields where applicable</stringProp>
+            <stringProp name="HTTPSampler.domain">${IP_Hostname}</stringProp>
+            <stringProp name="HTTPSampler.port">${IP_Port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${IP_Protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">${IP_ServerPath}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPSMART">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${File}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="PreProcess request">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import org.apache.commons.io.FileUtils;
+//import org.apache.commons.io.IOUtils;
+log.info(&quot;INFO Starting FILE based testing&quot;);
+
+String reqFile=vars.get(&quot;Troubleshoot&quot;)+vars.get(&quot;reqFile&quot;)+&quot;.&quot;+vars.get(&quot;FileExtension&quot;);
+log.info(&quot;Processing request file: &quot;+reqFile);
+String file = FileUtils.readFileToString(new File(reqFile),&quot;UTF-8&quot;);
+//log.info(file);
+vars.put(&quot;File&quot;,new String((file.getBytes(&quot;UTF-8&quot;))));</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/${FileExtension}; charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="PostProcess Get response">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import javax.swing.JOptionPane;
+prev.setDataEncoding(&quot;UTF-8&quot;);
+//String path=vars.get(&quot;ResultsPath&quot;);
+//JOptionPane.showMessageDialog(null, &quot;Done, check the latest folder for the test results\nLocation: &quot;+path, &quot;SMART Manual Test&quot;, JOptionPane.INFORMATION_MESSAGE);</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save response file" enabled="true">
+              <stringProp name="FileSaver.filename">${ResultsPath}\\${reqFile}_${TimeStamp}\\${reqFile}_resp.${FileExtension}</stringProp>
+              <boolProp name="FileSaver.errorsonly">false</boolProp>
+              <boolProp name="FileSaver.successonly">false</boolProp>
+              <boolProp name="FileSaver.skipsuffix">true</boolProp>
+              <boolProp name="FileSaver.skipautonumber">true</boolProp>
+              <boolProp name="FileSaver.ignoreTC">false</boolProp>
+              <stringProp name="FileSaver.numberPadLen">1</stringProp>
+              <stringProp name="TestPlan.comments">${ResultsPath}\\${reqFile}_${__time(HHmmss)}\\${reqFile}_resp.${FileExtension}</stringProp>
+            </ResultSaver>
+            <hashTree/>
+            <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+              <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
+              <stringProp name="SizeAssertion.size">1000</stringProp>
+              <intProp name="SizeAssertion.operator">3</intProp>
+              <stringProp name="Assertion.scope">all</stringProp>
+              <stringProp name="Scope.variable"></stringProp>
+            </SizeAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSONAssertion- ERRORCOUNT" enabled="true">
+              <stringProp name="JSON_PATH">$.DAJSONDocument.OCONTROL.ERRORCOUNT.value</stringProp>
+              <stringProp name="EXPECTED_VALUE">0</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+              <stringProp name="TestPlan.comments">modify the json path to get the error count for PCSM or PCO where applicable</stringProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSONAssertion- ERROR Description" enabled="true">
+              <stringProp name="JSON_PATH">$.DAJSONDocument.OCONTROL.ERROR.value</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">true</boolProp>
+              <boolProp name="INVERT">true</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Download application logs">
+            <stringProp name="IfController.condition">&quot;${GetDALogs}&quot;==&quot;Y&quot;</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">false</boolProp>
+          </IfController>
+          <hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Download logs from windows server" enabled="true">
+              <stringProp name="IfController.condition">&quot;${isWindows}&quot;==&quot;Y&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">false</boolProp>
+            </IfController>
+            <hashTree>
+              <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Copy Application logs" enabled="true">
+                <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+                <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+                <stringProp name="SystemSampler.command">powershell</stringProp>
+                <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="Argument">
+                      <stringProp name="Argument.name"></stringProp>
+                      <stringProp name="Argument.value">Copy-Item -Path Da.*.log -Destination ${ResultsPath}\\${reqFile}_${TimeStamp}\\\</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                  <collectionProp name="Arguments.arguments"/>
+                </elementProp>
+                <stringProp name="SystemSampler.directory">${RuntimePath}</stringProp>
+              </SystemSampler>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Extract and download logs from unix server" enabled="true">
+              <stringProp name="IfController.condition">&quot;${isWindows}&quot;==&quot;N&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">false</boolProp>
+            </IfController>
+            <hashTree>
+              <org.apache.jmeter.protocol.ssh.sampler.SSHCommandSampler guiclass="TestBeanGUI" testclass="org.apache.jmeter.protocol.ssh.sampler.SSHCommandSampler" testname="SSH Extract and compress Logs" enabled="true">
+                <stringProp name="command">zip -r /tmp/${reqFile}.zip ${RuntimePath}/Da*.log</stringProp>
+                <intProp name="connectionTimeout">5000</intProp>
+                <stringProp name="hostname">${IP_Hostname}</stringProp>
+                <stringProp name="passphrase">${sshPassphrase}</stringProp>
+                <stringProp name="password">${sshPassword}</stringProp>
+                <intProp name="port">22</intProp>
+                <boolProp name="printStdErr">true</boolProp>
+                <stringProp name="sshkeyfile"></stringProp>
+                <boolProp name="useReturnCode">true</boolProp>
+                <stringProp name="username">${sshUserName}</stringProp>
+                <stringProp name="TestPlan.comments">specify the command to run, for ex: zip -r /tmp/${TestCase}.zip /apps/exp/business-process-server/Business\ Process\ Engine/Log/DA-TENANT10.log</stringProp>
+                <boolProp name="useTty">false</boolProp>
+              </org.apache.jmeter.protocol.ssh.sampler.SSHCommandSampler>
+              <hashTree/>
+              <org.apache.jmeter.protocol.ssh.sampler.SSHSFTPSampler guiclass="TestBeanGUI" testclass="org.apache.jmeter.protocol.ssh.sampler.SSHSFTPSampler" testname="SSH SFTP logs to local machine" enabled="true">
+                <stringProp name="action">get</stringProp>
+                <intProp name="connectionTimeout">5000</intProp>
+                <stringProp name="destination">${ResultsPath}\\${reqFile}_${TimeStamp}\\${reqFile}_DAlog.zip</stringProp>
+                <stringProp name="hostname">${IP_Hostname}</stringProp>
+                <stringProp name="passphrase">${sshPassphrase}</stringProp>
+                <stringProp name="password">${sshPassword}</stringProp>
+                <intProp name="port">22</intProp>
+                <boolProp name="printFile">false</boolProp>
+                <stringProp name="source">/tmp/${reqFile}.zip</stringProp>
+                <stringProp name="sshkeyfile"></stringProp>
+                <stringProp name="username">${sshUserName}</stringProp>
+                <stringProp name="TestPlan.comments">change the &quot;source path&quot; unless required</stringProp>
+              </org.apache.jmeter.protocol.ssh.sampler.SSHSFTPSampler>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Confirmation message" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import javax.swing.JOptionPane;
+prev.setDataEncoding(&quot;UTF-8&quot;);
+String path=vars.get(&quot;ResultsPath&quot;)+vars.get(&quot;reqFile&quot;)+&quot;_&quot;+vars.get(&quot;TimeStamp&quot;);
+JOptionPane.showMessageDialog(null, &quot;Done, check the latest folder for the test results\nLocation: &quot;+path, &quot;SMART Manual Test&quot;, JOptionPane.INFORMATION_MESSAGE);</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="Results - Table view" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>false</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <fileName>true</fileName>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename">${mainFolder}\\TestResult\\${TestRun}\\TestLog.csv</stringProp>
+        <stringProp name="TestPlan.comments">High level oveview on the test results with transactions details for each test case</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Results - Tree view" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="TestPlan.comments">View request and response data. This will consume memory, disable when running large volumes of data</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
