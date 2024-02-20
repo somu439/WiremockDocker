@@ -1,0 +1,27 @@
+{
+  //"id" : "317c7c68-670f-42f6-8286-f72b70e0a765",
+  "name" : "error",
+  "request" : {
+    "urlPathPattern" : "/v3.1/name/india",
+    "method" : "GET",
+        "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.firstname"
+      }
+    ]
+  },
+  "response" : {
+    "status" : 400,
+	 "bodyFileName": "error.json",
+	 "transformers": ["response-template"],
+	 "transformerParameters":  {
+     "MyCustomParameter": "error"
+        },
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  },
+  //"uuid" : "317c7c68-670f-42f6-8286-f72b70e0a765",
+  "persistent" : true,
+  "insertionIndex" : 1
+}

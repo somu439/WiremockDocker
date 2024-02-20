@@ -1,0 +1,57 @@
+// This a sample try adding conditions to validate the json file path
+java -cp "wiremock-standalone-3.3.1.jar.jar:handlebars-4.2.0.jar" com.github.tomakehurst.wiremock.standalone.WireMockServerRunner --extensions com.github.jknack.handlebars.HandlebarsExtension
+
+
+  "response": {
+    "status": 200,
+    "bodyFileName": "{{jsonPath request.body '$.firstname'}}.json",
+    "bodyFileName": "<div>{{#getJSON 'your-data-file.json'}}<p>{{this.yourProperty}}</p>{{/getJSON}}</div>"
+
+    "transformers": ["response-template"]
+
+  }
+}
+   
+//working:  "bodyFileName": "{{jsonPath request.body '$.firstname'}}.json",
+//  "bodyFileName": "{{#if __files.exists 'india.json'}}india.json{{else}}error.json{{/if}}",
+//  not working
+// "bodyFileName": "{{#if request.body.bodyFileName}}{{request.body.bodyFileName}}{{else}}error.json{{/if}}",
+// "bodyFileName": "{{#if fileExists(jsonPath request.body '$.firstname')}}{{jsonPath request.body '$.firstname'}}.json{{else}}error.json{{/if}}",
+  
+//  "bodyFileName": "{{#if (jsonPath request.body '$.firstname')}}{{#if (regexTest (jsonPath request.body '$.firstname') '^.+\\.json$')}}{{jsonPath request.body '$.firstname'}}{{else}}error.json{{/if}}{{else}}error.json{{/if}}",
+//"bodyFileName": "{{#if (jsonPath request.body '$.firstname')}}{{jsonPath request.body '$.firstname'}}{{#if (endsWith (jsonPath request.body '$.firstname') '.json')}}{{else}}.json{{/if}}{{else}}error.json{{/if}}",
+
+//"bodyFileName": "{{#if (jsonPath request.body '$.firstname' )}}{{jsonPath request.body '$.firstname' '.json'}}{{#unless (jsonPath request.body '$.firstname' '.json')}}.json{{/unless}}{{else}}error.json{{/if}}",
+
+// "{{jsonPath request.body '$.firstname'}}.json"
+
+     //   "body": "{{fileExists('india.json') ? file('india.json') : 'File not found'}}",
+  
+//  "bodyFileName": "{{#if 'jsonPath request.body $firstname.json}}india.json{{else}}error.json{{/if}}",
+
+ //"bodyFileName": "{{#if {{jsonPath request.body '$.firstname'}}.json}}india.json{{else}}error.json{{/if}}",
+// "bodyFileName": "{{#if (jsonPath request.body '$.firstname')}}{{jsonPath request.body '$.firstname'}}.json{{else}}error.json{{/if}}",
+   //"body": "{{#if __files.exists 'india.json'}}india.json{{else}}error.json{{/if}}",
+
+   // "bodyFileName": "${{#if (fileSource.exists(request.bodyFileName))}}{{fileSource.text(request.bodyFileName)}}{{else}}${{fileSource.text('default.json')}}${{/if}}",
+        "bodyFileName": "files/{{request.body.india}}.json",
+        "body": "{{ fileExists('__files/{{request.body.india}}.json') ? file('__files/{{request.body.india}}.json') : 'File not found'}}",
+
+//"body": "{{ fileExists('__files/{{request.body.india}}.json') ? file('__files/{{request.body.india}}.json') : 'File not found'}}",
+
+//    "body": "{{ fileExists('files/{{request.body.india}}.json') ? file('files/{{request.body.india}}.json') : 'File not found'}}",
+       "bodyFileName": "{{#if request.body.bodyFileName}}{{request.body.bodyFileName}}{{else}}error.json{{/if}}",
+   //"body": "{{#if __files.exists 'india.json'}}india.json{{else}}error.json{{/if}}",
+	 "bodyFileName": "{{request.pathSegments.}}/{{jsonPath request.body '$.firstname'}}.json",  
+
+   // "bodyFileName": "${{#if (fileSource.exists(request.bodyFileName))}}{{fileSource.text(request.bodyFileName)}}{{else}}${{fileSource.text('default.json')}}${{/if}}",
+  
+   //"body": "{{ fileExists('__files/{{request.body.india}}.json') ? file('__files/{{request.body.india}}.json') : 'File not found'}}",
+
+//    "body": "{{ fileExists('files/{{request.body.india}}.json') ? file('files/{{request.body.india}}.json') : 'File not found'}}",
+       "bodyFileName": "{{#if request.body.bodyFileName}}{{request.body.bodyFileName}}{{else}}error.json{{/if}}",
+   //"body": "{{#if __files.exists 'india.json'}}india.json{{else}}error.json{{/if}}",
+//	 "bodyFileName": "{{request.pathSegments.}}/{{jsonPath request.body '$.firstname'}}.json",  
+
+   // "bodyFileName": "${{#if (fileSource.exists(request.bodyFileName))}}{{fileSource.text(request.bodyFileName)}}{{else}}${{fileSource.text('default.json')}}${{/if}}",
+  {{#if (matches request.query.id '[0-9]+')}}YES{{else}}NO{{/if}}\"}"

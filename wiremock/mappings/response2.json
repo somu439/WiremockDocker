@@ -1,0 +1,24 @@
+//working:  "bodyFileName": "{{jsonPath request.body '$.firstname'}}.json",
+
+{
+  "request": {
+    "method": "GET",
+    "url": "/example"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "$.firstname",
+//     "fixedDelayMilliseconds": 5000,
+         "delayDistribution": {
+      "type": "lognormal",
+      "median": 10,
+      "sigma": 0.5
+    },
+    "transformers": ["json-file-response-validator"],
+        "transformerParameters": {
+      "bodyFileName": "$.firstname"
+    }
+
+  }
+}
+
