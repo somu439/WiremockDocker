@@ -28,6 +28,9 @@ public class JsonFileResponseValidator extends ResponseDefinitionTransformer {
 
     @Override
     public ResponseDefinition transform(Request request, ResponseDefinition responseDefinition, FileSource files, Parameters parameters) {
+        String originalBody = responseDefinition.getBodyFileName();
+        System.out.println("respnse body:"+originalBody);
+
         String bodyFileNameExpression = parameters.getString("bodyFileName", null);
         String responseBody="";
 
@@ -40,7 +43,7 @@ public class JsonFileResponseValidator extends ResponseDefinitionTransformer {
         String requestBody = request.getBodyAsString();
 //        System.out.println("requestbody:"+requestBody);
         String currentDirectory = Paths.get("").toAbsolutePath().toString();
-        String bodyFileName = "__files/"+evaluateBodyFileNameExpression(requestBody, bodyFileNameExpression);
+        String bodyFileName = evaluateBodyFileNameExpression(requestBody, bodyFileNameExpression);
         System.out.println("bodyfilename:"+bodyFileName);
 //        byte[] responseBodyBytes = files.getBinaryFileNamed(bodyFileName).readContents();
 //
@@ -53,7 +56,7 @@ public class JsonFileResponseValidator extends ResponseDefinitionTransformer {
 
 //        String filePath = "__files/" + bodyFileName;
         String filePath = bodyFileName;
-        Path file = Paths.get(filePath);
+        Path file = Paths.get("__files/"+filePath);
 
         if (Files.exists(file)) {
             byte[] responseBodyBytes = files.getBinaryFileNamed(bodyFileName).readContents();
@@ -67,12 +70,13 @@ public class JsonFileResponseValidator extends ResponseDefinitionTransformer {
                     .withBody(responseBody)
                     .withHeader("content", "application/json")
                     .build();
-        } else {
+        }
+        else {
             // JSON file does not exist, return a 400 status code with a custom response body
             return ResponseDefinitionBuilder
                     .like(responseDefinition)
                     .withStatus(400)
-                    .withBody("Response File not found")
+                    .withBody("{\"Error\": \"record not found\"}")
                     .build();
         }
     }
