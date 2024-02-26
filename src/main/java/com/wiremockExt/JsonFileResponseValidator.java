@@ -1,4 +1,4 @@
-package com.example.wiremock.extensions;
+package com.wiremockExt;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,7 +29,7 @@ public class JsonFileResponseValidator extends ResponseDefinitionTransformer {
     @Override
     public ResponseDefinition transform(Request request, ResponseDefinition responseDefinition, FileSource files, Parameters parameters) {
         String originalBody = responseDefinition.getBodyFileName();
-        System.out.println("respnse body:"+originalBody);
+        System.out.println("resopnse body:"+originalBody);
 
         String bodyFileNameExpression = parameters.getString("bodyFileName", null);
         String responseBody="";

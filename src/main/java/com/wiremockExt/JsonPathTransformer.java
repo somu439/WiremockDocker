@@ -1,4 +1,4 @@
-package com.example.wiremock.extensions;
+package com.wiremockExt;
 
 import com.github.tomakehurst.wiremock.common.*;
 import com.github.tomakehurst.wiremock.extension.*;

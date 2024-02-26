@@ -1,4 +1,4 @@
-package com.example.wiremock.extensions;
+package com.wiremockExt;
 
 import com.jayway.jsonpath.JsonPath;
 

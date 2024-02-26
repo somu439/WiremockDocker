@@ -1,4 +1,4 @@
-package com.example.wiremock.extensions;
+package com.wiremockExt;
 
 public class StringManipulation {
     public static void main(String[] args) {
