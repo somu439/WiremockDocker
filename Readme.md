@@ -14,3 +14,5 @@ json body
    **{
     "fixedDelay": 2500
     }**
+6. Request XML from API
+<outer><inner>india1</inner></outer>
