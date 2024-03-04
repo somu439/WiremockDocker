@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/xml/example",
+    "bodyPatterns": [
+      {
+        "matchesXPath": "/outer/inner/text()"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+ "bodyFileName": "{{xPath request.body '/outer/inner/text()'}}.xml",
+    "transformers": ["response-template"]
+  }
+}
