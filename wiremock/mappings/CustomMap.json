@@ -1,0 +1,26 @@
+{
+    "id": "48d42dc9-2210-43ac-b67c-60df433633cc",
+    "name": "country_india",
+    "request": {
+        "url": "/v3.1/country-name",
+        "method": "GET",
+    "bodyPatterns": [
+      {
+		"matchesJsonPath" : "$[?(@.country == 'india')]" //match json path
+      }
+    ]
+  },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "jsonBody": {	//response body start 
+            "message": "User created successfully",
+            "user": {
+                "name": "India",
+                "Lang": "Hindi"
+            }
+        } //response body start
+    }
+}
