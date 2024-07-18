@@ -1,1 +1,29 @@
-
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/record",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.firstname",
+          "equalTo": "sreeni"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": ["response-template"],
+    "bodyFileName": "records.csv",
+    "transformerParameters": {
+      "csvSeparator": ",",
+      "csvFirstLineAsHeader": "true",
+      "matchField": "name",
+      "matchValue": "{{jsonPath request.body '$.firstname'}}",
+      "responseField": "record"
+    }
+  }
+}
