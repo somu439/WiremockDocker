@@ -1,0 +1,24 @@
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+def prettifyJson(String jsonString) {
+    try {
+        // Parse the JSON string
+        def jsonSlurper = new JsonSlurper()
+        def jsonObject = jsonSlurper.parseText(jsonString)
+        
+        // Convert back to JSON string with pretty printing
+        return JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
+    } catch (Exception e) {
+        println "Error formatting JSON: ${e.message}"
+        return null
+    }
+}
+
+// Example usage
+def uglyJson = '{"name":"John Doe","age":30,"city":"New York","hobbies":["reading","swimming","cycling"]}'
+
+def prettyJson = prettifyJson(uglyJson)
+if (prettyJson) {
+    println prettyJson
+}
