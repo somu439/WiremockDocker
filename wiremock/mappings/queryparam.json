@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/posts\\?id=(.*)&name=(.*)"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "__files/{{request.query.name}}_{{request.query.id}}.json",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": ["response-template"]
+  }
+}
